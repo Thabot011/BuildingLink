@@ -1,0 +1,34 @@
+<div>
+  <mat-toolbar *ngIf="currentFile" class="progress-bar">
+    <mat-progress-bar color="accent" [value]="progress"></mat-progress-bar>
+    <span class="progress">{{ progress }}%</span>
+  </mat-toolbar>
+
+  <mat-form-field>
+    <div>
+      <mat-toolbar>
+        <input readonly matInput [value]="fileName" />
+
+        <button mat-flat-button
+                color="primary"
+                [disabled]="!currentFile"
+                (click)="read()">
+          Process File
+        </button>
+      </mat-toolbar>
+
+      <input #fileInput accept=".txt" type="file"
+             id="fileInput"
+             (change)="selectFile($event)"
+             name="fileInput" />
+    </div>
+  </mat-form-field>
+</div>
+
+<div *ngIf="message" class="message">
+  {{ message }}
+</div>
+<div *ngIf="fileContent">
+  <h2>Processed Content</h2>
+  <div class="processedContent" [innerHTML]="fileContent"></div>
+</div>
