@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/BuildingLinkTask/BuildingLinkFronEnd/BuildingLink/.angular/cache/16.2.3
+/BuildingLinkTask/BuildingLinkBackEnd/Web/DriverDB.sqlite
